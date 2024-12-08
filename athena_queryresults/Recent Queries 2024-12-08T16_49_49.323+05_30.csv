@@ -1,0 +1,36 @@
+Execution ID,Query,Start time,Status,Run time,Data scanned,Query engine version used,Encryption
+0d2a1838-da6f-4d42-b16b-1203c41d1453,"SELECT * 
+FROM my_database.transformed_data
+WHERE year = 2024 AND month = 12 AND day = 8
+AND humidity > 50
+LIMIT 10",2024-12-08T16:01:41.744+05:30,SUCCEEDED,665 ms,1.88 KB,Athena engine version 3,
+8f2a3ebe-b08b-4915-be42-cdd60dcfdbbe,"SELECT AVG(temperature) AS avg_temperature
+FROM my_database.transformed_data
+WHERE year = 2024 AND month = 12 AND day = 8",2024-12-08T16:01:29.872+05:30,SUCCEEDED,872 ms,18.78 KB,Athena engine version 3,
+9de4eb2e-d4e9-4f00-bc7d-2c13996de9a6,"SELECT * FROM my_database.transformed_data
+WHERE year = 2024 AND month = 12 AND day = 8",2024-12-08T16:00:00.654+05:30,SUCCEEDED,752 ms,18.78 KB,Athena engine version 3,
+c1a22291-f84e-4ae6-8697-97066f6ac698,"SELECT * FROM my_database.transformed_data
+WHERE year = 2024 AND month = 12 AND day = 8
+LIMIT 10",2024-12-08T15:59:37.662+05:30,SUCCEEDED,722 ms,1.56 KB,Athena engine version 3,
+8d7667dc-44d1-401d-b4db-3987cb6ffecf,"ALTER TABLE my_database.transformed_data ADD PARTITION (year=2024, month=12, day=8) LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:59:19.705+05:30,SUCCEEDED,404 ms,0 MB,Athena engine version 3,
+1a33a722-c1f5-4915-8729-d4cb08907aa3,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe' WITH SERDEPROPERTIES ( 'serialization.format' = '1' ) LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:57:08.660+05:30,SUCCEEDED,491 ms,0 MB,Athena engine version 3,
+7544df0b-19c9-4aed-8dc7-aa9b4b10e0f6,SELECT * FROM my_database.transformed_data LIMIT 10,2024-12-08T15:50:58.270+05:30,SUCCEEDED,793 ms,0 MB,Athena engine version 3,
+779b4819-2cd1-47a2-893d-ba7fc37121ef,SHOW PARTITIONS my_database.transformed_data,2024-12-08T15:50:48.505+05:30,SUCCEEDED,579 ms,0 MB,Athena engine version 3,
+3104f164-10b1-4034-9fc6-f03980a60150,MSCK REPAIR TABLE my_database.transformed_data,2024-12-08T15:50:35.751+05:30,SUCCEEDED,2.607 sec,0 MB,Athena engine version 3,
+0fe27ef7-714a-44f9-ae96-6403a2db065f,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe' WITH SERDEPROPERTIES ( 'serialization.format' = '1' ) LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:50:07.581+05:30,SUCCEEDED,563 ms,0 MB,Athena engine version 3,
+19b91c66-f0f6-40af-9522-17d4cea15b40,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) STORED AS JSON LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:49:30.986+05:30,FAILED,346 ms,0 MB,Athena engine version 3,
+b3f4b1b6-e0ee-465a-93bf-d85ca80add2a,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) STORED AS json LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:49:09.666+05:30,FAILED,337 ms,0 MB,Athena engine version 3,
+1afaf7a1-aa8a-4cdb-ad80-897115c4ad12,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) STORED AS PARQUET LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:48:36.951+05:30,SUCCEEDED,454 ms,0 MB,Athena engine version 3,
+a26a1b3f-b19c-4b2d-b260-55548a2edf51,SELECT * FROM my_database.transformed_data LIMIT 10,2024-12-08T15:46:45.028+05:30,SUCCEEDED,680 ms,0 MB,Athena engine version 3,
+f1c5c366-5af0-4e5f-b9b4-dd9812f7bab2,MSCK REPAIR TABLE my_database.transformed_data,2024-12-08T15:46:12.655+05:30,SUCCEEDED,1.72 sec,0 MB,Athena engine version 3,
+f1ed9e9f-4582-4f5b-919a-0ca5354d6fea,"SELECT AVG(temperature) AS avg_temperature
+FROM my_database.transformed_data",2024-12-08T15:40:45.544+05:30,SUCCEEDED,434 ms,0 MB,Athena engine version 3,
+8d1ee1cf-0991-4435-9829-16f30968dd85,"SELECT * FROM my_database.transformed_data
+WHERE year = 2024 AND month = 12 AND day = 8",2024-12-08T15:40:34.154+05:30,SUCCEEDED,729 ms,0 MB,Athena engine version 3,
+ec0fde04-fff0-415b-9584-14ebf9cb2d1b,"SELECT * FROM my_database.transformed_data
+WHERE temperature > 0",2024-12-08T15:40:24.856+05:30,SUCCEEDED,463 ms,0 MB,Athena engine version 3,
+62fe51dd-3579-4b83-bee6-4d18ed8d8e3a,SHOW PARTITIONS my_database.transformed_data,2024-12-08T15:39:35.975+05:30,SUCCEEDED,553 ms,0 MB,Athena engine version 3,
+2e3ccf94-69c7-4651-a387-5cffca75e91a,MSCK REPAIR TABLE my_database.transformed_data,2024-12-08T15:37:36.671+05:30,SUCCEEDED,2.63 sec,0 MB,Athena engine version 3,
+026c1e61-54d9-4975-8bb9-0d52ed0575ef,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe' LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:36:55.262+05:30,SUCCEEDED,766 ms,0 MB,Athena engine version 3,
+890e5ab3-77a8-490c-a892-072d621b283c,"CREATE EXTERNAL TABLE IF NOT EXISTS my_database.transformed_data ( sensor_id STRING, temperature INT, humidity INT, timestamp INT, transformed BOOLEAN ) PARTITIONED BY (year INT, month INT, day INT) STORED AS JSON LOCATION 's3://my-transformed-data-bucket-mega/year=2024/month=12/day=08/'",2024-12-08T15:36:20.463+05:30,FAILED,336 ms,0 MB,Athena engine version 3,
+47abc7bb-c504-4859-a896-fbadaad2cf15,CREATE DATABASE IF NOT EXISTS my_database,2024-12-08T15:35:21.771+05:30,SUCCEEDED,299 ms,0 MB,Athena engine version 3,
